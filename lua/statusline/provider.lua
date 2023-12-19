@@ -104,6 +104,22 @@ function pd.fileinfo()
   return result
 end
 
+function pd.pathinfo()
+  local function stl_path()
+    local pname = api.nvim_buf_get_name(0)
+    return vim.fn.fnamemodify(pname, ':p')
+  end
+  return {
+    stl = stl_path,
+    name = 'pathinfo',
+    event = { 'BufEnter', 'TermClose' },
+    attr = {
+      foreground = '#999999',
+      background = 'NONE'
+    }
+  }
+end
+
 local function gitsigns_data(type)
   if not vim.b.gitsigns_status_dict then
     return ''

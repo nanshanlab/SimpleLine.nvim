@@ -27,6 +27,9 @@ local function default()
     p.gitchange,
     p.gitdelete,
     --
+    p.sep,
+    p.pathinfo,
+    --
     p.pad,
     p.readonly,
     --
