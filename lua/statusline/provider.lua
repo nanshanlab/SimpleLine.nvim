@@ -430,4 +430,21 @@ function pd.lnumcol()
   return result
 end
 
+function pd.codeium()
+  local function stl_codeium()
+    local icon = '󰘦 '
+    return icon .. [[%3{codeium#GetStatusString()}]]
+  end
+  return {
+    stl = stl_codeium,
+    name = 'codeium',
+    event = { 'BufEnter' },
+    attr = {
+      foreground = '#689d6a',
+      background = 'NONE',
+      bold = true
+    },
+  }
+end
+
 return pd
