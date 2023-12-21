@@ -43,9 +43,6 @@ local function default()
     p.lsp,
     --
     p.sepr,
-    p.codeium,
-    --
-    p.sepr,
     p.encoding,
     --
     p.sepr,
