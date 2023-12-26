@@ -73,10 +73,15 @@ local function cell(index)
 end
 
 local tbl_rendera = coroutine.create(function()
+  local separator =  '%#' .. tbl_hl("separator", { fg = "#d5c4a1" } ) .. '#' .. '│'
   while true do
     local line = ''
     for i = 1, vim.fn.tabpagenr('$'), 1 do
-      line = line .. cell(i)
+      if i ~= vim.fn.tabpagenr('$') then
+        line = line .. cell(i) .. separator
+      else
+        line = line .. cell(i)
+      end
     end
     line = line .. '%#TabLineFill#%='
     vim.opt.tabline = line
