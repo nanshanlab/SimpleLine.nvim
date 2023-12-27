@@ -73,7 +73,7 @@ local function cell(index)
 end
 
 local tbl_rendera = coroutine.create(function()
-  local separator =  '%#' .. tbl_hl("separator", { fg = "#d5c4a1" } ) .. '#' .. '│'
+  local separator =  '%#' .. tbl_hl("separator", { fg = '#3c3836' } ) .. '#' .. ' ╱ '
   while true do
     local line = ''
     for i = 1, vim.fn.tabpagenr('$'), 1 do
